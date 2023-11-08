@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: segment-bridge
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: segment-bridge
+    app.kubernetes.io/part-of: segment-bridge
+  name: segment-bridge
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/instance: segment-bridge
+status:
+  loadBalancer: {}
